@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Proyecto Hotel</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    body {
+      background-image: url('https://cf.bstatic.com/xdata/images/hotel/max1024x768/308426205.jpg?k=b3e509087d1c5377558a6d67886e19210a64ac1407ccbe0a0effee7d5349d755&o=&hp=1');
+      background-size: cover;
+      background-position: center;
+      font-family: 'Courier New', Courier, monospace;
+      font-style: italic;
+      color: #fff;
+    }
+    .navbar {
+      background: rgba(0, 0, 0, 0.8);
+      border-radius: 0 0 20px 20px;
+    }
+    .navbar li {
+      display: inline-block;
+      list-style: none;
+      margin: 0.5em 1em;
+    }
+    .navbar a {
+      padding: 0.5em 0.8em;
+      color: #ffffff80;
+      position: relative;
+      text-decoration: none;
+      font-size: 20px;
+    }
+    .navbar a:hover {
+      color: #ffffff;
+    }
+    .navbar a::before,
+    .navbar a::after {
+      content: '';
+      height: 14px;
+      width: 14px;
+      position: absolute;
+      transition: all 0.35s ease;
+      opacity: 0;
+    }
+    .navbar a::before {
+      right: 0;
+      top: 0;
+      border-top: 3px solid #f36f18;
+      border-right: 3px solid #f36f18;
+      transform: translate(-100%, 50%);
+    }
+    .navbar a::after {
+      left: 0;
+      bottom: 0;
+      border-bottom: 3px solid #4ca717;
+      border-left: 3px solid #2fd2fb;
+      transform: translate(100%, -50%);
+    }
+    .navbar a:hover::before,
+    .navbar a:hover::after {
+      transform: translate(0, 0);
+      opacity: 1;
+    }
+    h1 {
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 3rem;
+      margin-bottom: 40px;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    }
+    .card {
+      background: rgba(255, 255, 255, 0.1);
+      border: none;
+      border-radius: 15px;
+      backdrop-filter: blur(10px);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+    }
+    .card img {
+      border-radius: 15px 15px 0 0;
+    }
+    footer {
+      background: rgba(0, 0, 0, 0.8);
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+      border-radius: 20px 20px 0 0;
+    }
+    footer a {
+      color: #ffffff80;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+
+    footer a:hover {
+      color: #ffffff;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-sm navbar-dark">
+    <div class="container-fluid">
+      <img src="https://media.istockphoto.com/id/1264956351/es/vector/cama-y-almohada.jpg?s=612x612&w=0&k=20&c=bFfbM-PY4MCPHPV8g5gASzrgHAddZFDkOiS0KlTXKi4=" alt="logo" style="width: 80px;">
+      <a class="navbar-brand" href="/">Proyecto Hotel</a>
+      <div class="collapse navbar-collapse" id="mynavbar">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/">Inicio</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="container mt-4">
+    <h1 class="text-center">Hotel Paradise</h1>
+  </div>
+  <div class="container mt-4">
+    <div class="row">
+      <div class="col-sm-4">
+        <div class="card mb-3">
+          <div class="card-body text-center">
+            <img src="https://media.istockphoto.com/id/1295868798/es/vector/icono-de-l%C3%ADnea-vectorial-relacionado-con-la-recepci%C3%B3n.jpg?s=612x612&w=0&k=20&c=l6UYkhSv8ylc11njInLmfNqE6j40MaNT84Xhzz4tFK4=" class="img-fluid" alt="Clientes">
+            <p>Clientes</p>
+            <a href="/clientes" class="stretched-link"></a>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="card mb-3">
+          <div class="card-body text-center">
+            <img src="https://media.istockphoto.com/id/1223193381/es/vector/l%C3%ADnea-de-cama-doble-e-icono-s%C3%B3lido-s%C3%ADmbolo-del-dormitorio-del-hotel-pictograma-de-estilo-de.jpg?s=612x612&w=0&k=20&c=k__sVB-bRwgkP6AAgNdsLGMPZAuLgsaZPBotWXlb_Qk=" class="img-fluid" alt="Habitaciones">
+            <p>Habitaciones</p>
+            <a href="/habitaciones" class="stretched-link"></a>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="card mb-3">
+          <div class="card-body text-center">
+            <img src="https://media.istockphoto.com/id/1220736570/es/vector/recepci%C3%B3n-recepcionista-escritorio-color-azul-oficina-icono-de-servicio.jpg?s=612x612&w=0&k=20&c=K8k4U8XspsFYWocqzc4juv2nrXuFcGq-mTW4msTKPko=" class="img-fluid" alt="Registro">
+            <p>Registro</p>
+            <a href="/registros" class="stretched-link"></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer>
+    <p>&copy; 2024 Tatiana Arenis. Todos los derechos reservados.</p>
+    <div>
+      <a href="#" target="_blank"><i class="fab fa-facebook icon"></i>Facebook</a> |
+      <a href="#" target="_blank"><i class="fab fa-instagram icon"></i>Instagram</a>
+    </div>
+  </footer>
+
+</body>
+
+</html>
+

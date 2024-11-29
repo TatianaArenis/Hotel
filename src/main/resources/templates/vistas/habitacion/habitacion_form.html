@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulario de Habitación - Cartagena Paradise</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <style>
+        body {
+            background-image: url('https://cf.bstatic.com/xdata/images/hotel/max1024x768/308426205.jpg?k=b3e509087d1c5377558a6d67886e19210a64ac1407ccbe0a0effee7d5349d755&o=&hp=1'); 
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; 
+            font-family: 'Arial', sans-serif;
+        }
+        .container {
+            background-color: rgba(255, 255, 255, 0.8); 
+            padding: 30px;
+            border-radius: 10px;
+            margin-top: 30px;
+        }
+        .logo {
+            width: 150px;
+            margin-bottom: 20px;
+        }
+        h1 {
+            font-family: 'Dancing Script', cursive; 
+            color: #005f73;
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: 5px; 
+        }
+        h2 {
+            color: #005f73; 
+            font-family: 'Montserrat', sans-serif;
+            font-weight: bold;
+        }
+        label {
+            color: #0a9396; 
+        }
+        .form-control {
+            border-radius: 0;
+        }
+        .btn-primary {
+            background-color: #0a9396;
+            border: none;
+            border-radius: 0;
+        }
+        .btn-primary:hover {
+            background-color: #005f73;
+        }
+    </style>
+</head>
+<body>
+    <h1>Cartagena Paradise</h1>
+
+    <div class="container">
+        <h2 class="text-center">Formulario de Habitación</h2>
+        <form th:action="@{/habitaciones}" method="post">
+            <div class="form-group">
+                <label for="numero">Número de Habitación:</label>
+                <input type="text" id="numero" name="numero" class="form-control" th:value="*{id}" required />
+            </div>
+            <div class="form-group">
+                <label for="tipo">Tipo de Habitación:</label>
+                <input type="text" id="tipo" name="tipo" class="form-control" th:value="*{tipo}" required />
+            </div>
+			<div class="form-group">
+	            <label for="precio">Descripcion:</label>
+				<input type="text" id="descripcion" name="descripcion" class="form-control" th:value="*{descripcion}" required />
+			</div>
+            <div class="form-group">
+                <label for="precio">Precio:</label>
+                <input type="number" id="precio" name="precio" class="form-control" th:value="*{precio}" required />
+            </div>
+			
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary">Guardar Habitación</button>
+            </div>
+        </form>
+
+        <a href="/habitaciones" class="btn btn-secondary mt-3">Regresar a la lista de habitaciones</a>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
