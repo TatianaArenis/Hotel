@@ -1,0 +1,15 @@
+C:\yuri\ProyectoHotel\src\main\java\com\proyectohotel\app\controller\ClienteController.java
+C:\yuri\ProyectoHotel\src\main\java\com\proyectohotel\app\controller\HabitacionController.java
+C:\yuri\ProyectoHotel\src\main\java\com\proyectohotel\app\controller\PrincipalController.java
+C:\yuri\ProyectoHotel\src\main\java\com\proyectohotel\app\controller\RegistroController.java
+C:\yuri\ProyectoHotel\src\main\java\com\proyectohotel\app\entity\Cliente.java
+C:\yuri\ProyectoHotel\src\main\java\com\proyectohotel\app\entity\Habitacion.java
+C:\yuri\ProyectoHotel\src\main\java\com\proyectohotel\app\entity\Registro.java
+C:\yuri\ProyectoHotel\src\main\java\com\proyectohotel\app\entity\Reserva.java
+C:\yuri\ProyectoHotel\src\main\java\com\proyectohotel\app\ProyectoHotelApplication.java
+C:\yuri\ProyectoHotel\src\main\java\com\proyectohotel\app\repository\ClienteRepository.java
+C:\yuri\ProyectoHotel\src\main\java\com\proyectohotel\app\repository\HabitacionRepository.java
+C:\yuri\ProyectoHotel\src\main\java\com\proyectohotel\app\repository\RegistroRepository.java
+C:\yuri\ProyectoHotel\src\main\java\com\proyectohotel\app\service\ClienteService.java
+C:\yuri\ProyectoHotel\src\main\java\com\proyectohotel\app\service\HabitacionService.java
+C:\yuri\ProyectoHotel\src\main\java\com\proyectohotel\app\service\RegistroService.java

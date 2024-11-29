@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Registro de Clientes - Cartagena Paradise</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            background-image: url('https://cf.bstatic.com/xdata/images/hotel/max1024x768/308426205.jpg?k=b3e509087d1c5377558a6d67886e19210a64ac1407ccbe0a0effee7d5349d755&o=&hp=1'); 
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; 
+            font-family: 'Arial', sans-serif;
+        }
+        .container {
+            background-color: rgba(255, 255, 255, 0.8); 
+            padding: 30px;
+            border-radius: 10px;
+            margin-top: 30px;
+        }
+        .logo {
+            width: 150px;
+            margin-bottom: 20px;
+        }
+        h1 {
+            font-family: 'Dancing Script', cursive; 
+            color: #005f73;
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: 5px; 
+        }
+        h2 {
+            color: #005f73; 
+            font-family: 'Montserrat', sans-serif;
+            font-weight: bold;
+        }
+        label {
+            color: #0a9396; 
+        }
+        .form-control {
+            border-radius: 0;
+        }
+        .btn-primary {
+            background-color: #0a9396;
+            border: none;
+            border-radius: 0;
+        }
+        .btn-primary:hover {
+            background-color: #005f73;
+        }
+        .social-icons {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .social-icons a {
+            color: #0a9396;
+            font-size: 1.5rem;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+        .social-icons a:hover {
+            color: #005f73;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Cartagena Paradise</h1>
+
+    <div class="container">
+        <h2 class="text-center">Registro de Clientes</h2>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Cliente ID</th>
+                    <th>Habitación ID</th>
+                    <th>Fecha de Registro</th>
+                    <th>Opciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="registro : ${registros}">
+                    <td th:text="${registro.id}"></td>
+                    <td th:text="${registro.cliente.nombre}"></td>
+                    <td th:text="${registro.habitacion.id}"></td>
+                    <td th:text="${registro.fechaRegistro}"></td>
+                    <td>
+                      
+					<a th:href="@{/registros/delete/{id}(id=${registro.id})}" class="btn btn-danger">Eliminar</a>
+
+                     
+                        <a th:href="@{/registros/edit/{id}(id=${registro.id})}" class="btn btn-warning">Editar</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="text-center">
+            <a href="/registros/new" class="btn btn-primary">Agregar Nuevo Registro</a>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

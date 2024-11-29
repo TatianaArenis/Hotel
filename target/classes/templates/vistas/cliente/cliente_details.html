@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="path_to_your_css/bootstrap.min.css">
+    <title>Detalles del Cliente</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Detalles del Cliente</h1>
+        <p><strong>ID:</strong> <span th:text="${cliente.id}"></span></p>
+        <p><strong>Nombre:</strong> <span th:text="${cliente.nombre}"></span></p>
+        <p><strong>Apellido:</strong> <span th:text="${cliente.apellido}"></span></p>
+        <p><strong>Email:</strong> <span th:text="${cliente.email}"></span></p>
+        <a href="/clientes" class="btn btn-primary">Regresar a la lista de clientes</a>
+    </div>
+    <script src="path_to_your_js/jquery.min.js"></script>
+    <script src="path_to_your_js/bootstrap.min.js"></script>
+</body>
+</html>

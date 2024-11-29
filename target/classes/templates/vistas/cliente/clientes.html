@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clientes - Proyecto Hotel</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            font-style: italic;
+            background-image: url('https://cf.bstatic.com/xdata/images/hotel/max1024x768/308426205.jpg?k=b3e509087d1c5377558a6d67886e19210a64ac1407ccbe0a0effee7d5349d755&o=&hp=1');
+            background-size: cover;
+            background-attachment: fixed;
+            color: white;
+        }
+
+        .navbar {
+            text-transform: uppercase;
+            font-weight: 300;
+            background: rgba(255, 255, 255, 0.3); /* Fondo claro translúcido */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra gris suave */
+        }
+
+        .navbar a {
+            color: #555555; /* Color gris suave */
+            position: relative;
+            text-decoration: none;
+            font-size: 20px;
+        }
+
+        .navbar a:hover {
+            color: #333333; /* Color más oscuro al pasar el cursor */
+        }
+
+        h1 {
+            color: #333333;
+            font-size: 36px;
+            font-weight: bold;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .table {
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .table th,
+        .table td {
+            color: #333333;
+        }
+
+        .btn-primary {
+            background-color: #a3d5d3; /* Color pastel suave */
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background-color: #82c3b5; /* Color pastel más oscuro */
+        }
+
+        .btn-warning {
+            background-color: #f6d6a4; /* Pastel amarillo suave */
+            border: none;
+        }
+
+        .btn-warning:hover {
+            background-color: #f1c27d;
+        }
+
+        .btn-danger {
+            background-color: #f8b2a1; /* Pastel rojo claro */
+            border: none;
+        }
+
+        .btn-danger:hover {
+            background-color: #f29485;
+        }
+
+        footer {
+            background: rgba(255, 255, 255, 0.3); /* Fondo claro translúcido */
+            color: #333333;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        footer a {
+            color: #555555; /* Color gris suave */
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        footer a:hover {
+            color: #333333;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-sm navbar-light">
+        <div class="container-fluid">
+            <img src="https://media.istockphoto.com/id/1264956351/es/vector/cama-y-almohada.jpg?s=612x612&w=0&k=20&c=bFfbM-PY4MCPHPV8g5gASzrgHAddZFDkOiS0KlTXKi4=" alt="logo" style="width: 80px;">
+            <a class="navbar-brand" href="javascript:void(0)">Proyecto Hotel</a>
+
+            <div class="collapse navbar-collapse" id="mynavbar">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/verHabitaciones.html">Habitaciones</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/verRegistro.html">Registro</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container mt-4">
+        <h1 class="text-center">Clientes Registrados</h1>
+    </div>
+    <div class="container mt-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Email</th>
+                    <th>Teléfono</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="cliente : ${clientes}">
+                    <td th:text="${cliente.id}"></td>
+                    <td th:text="${cliente.nombre}"></td>
+                    <td th:text="${cliente.apellido}"></td>
+                    <td th:text="${cliente.email}"></td>
+                    <td th:text="${cliente.telefono}"></td>
+                    <td>
+                        <a th:href="@{/clientes/edit/{id}(id=${cliente.id})}" class="btn btn-warning btn-sm">Editar</a>
+                        <a th:href="@{/clientes/delete/{id}(id=${cliente.id})}" class="btn btn-danger btn-sm">Eliminar</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+		<a th:href="@{/clientes/new}" class="btn btn-primary">Agregar Cliente</a>
+    </div>
+    <footer>
+        <p>&copy; 2024 Proyecto Hotel. Todos los derechos reservados.</p>
+        <div>
+            <a href="#" target="_blank"><i class="fab fa-facebook icon"></i>Facebook</a> |
+            <a href="#" target="_blank"><i class="fab fa-instagram icon"></i>Instagram</a>
+        </div>
+    </footer>
+
+</body>
+
+</html>
+

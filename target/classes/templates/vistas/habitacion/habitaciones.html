@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Habitaciones Disponibles - Proyecto Hotel</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            background-image: url('https://cf.bstatic.com/xdata/images/hotel/max1024x768/308426205.jpg?k=b3e509087d1c5377558a6d67886e19210a64ac1407ccbe0a0effee7d5349d755&o=&hp=1');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        h1 {
+            font-family: 'Dancing Script', cursive;
+            color: #005f73;
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        th {
+            background-color: #005f73;
+            color: white;
+        }
+
+        td {
+            background-color: #f0f0f0;
+        }
+
+        img {
+            width: 200px;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .btn-primary {
+            background-color: #0a9396;
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background-color: #005f73;
+        }
+
+        /* Social media icons */
+        .social-icons {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            color: #0a9396;
+            font-size: 1.5rem;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+
+        .social-icons a:hover {
+            color: #005f73;
+        }
+    </style>  
+</head>
+<body>
+
+    <h1>Habitaciones Disponibles</h1>
+
+    <div class="container">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Tipo</th>
+					<th>Descripcion</th>
+                    <th>Precio</th>
+                    <th>Opciones</th>
+                </tr>
+            </thead>
+            <tbody>
+				<a th:href="@{/habitaciones/new}" class="btn btn-primary">Agregar Habitacion</a>
+                <tr th:each="habitacion : ${habitaciones}">
+					<td th:text="${habitacion.id}"></td>
+                    <td th:text="${habitacion.tipo}"></td>
+					<td th:text="${habitacion.descripcion}"></td>
+                    <td th:text="${habitacion.precio} + ' $'"></td>
+                    <td>
+                        <a th:href="@{/habitaciones/delete/{id}(id=${habitacion.id})}" class="btn btn-danger btn-sm">Eliminar</a>
+                        <a th:href="@{/habitaciones/edit/{id}(id=${habitacion.id})}" class="btn btn-warning">Editar</a>
+                    </td>
+                </tr>
+            </tbody>
+			
+        </table>
+    </div>
+
+    <div class="social-icons">
+        <a href="https://www.instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+
+</body>
+</html>

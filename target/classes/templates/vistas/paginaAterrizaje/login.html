@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background-image: url('https://cf.bstatic.com/xdata/images/hotel/max1024x768/308426205.jpg?k=b3e509087d1c5377558a6d67886e19210a64ac1407ccbe0a0effee7d5349d755&o=&hp=1');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        .form-container {
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+        .navbar {
+            background-color: rgba(0, 95, 115, 0.8);
+        }
+        .navbar a {
+            color: white !important;
+        }
+        .btn-primary {
+            background-color: #0a9396;
+        }
+        .btn-primary:hover {
+            background-color: #005f73;
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-900">
+
+    <!-- Navigation -->
+    <nav class="navbar bg-blue-600 p-4 shadow-lg">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <a href="#" class="text-white text-2xl font-bold">Hotel Paradise</a>
+            <div class="space-x-6">
+                <a href="/" class="hover:text-gray-200">Home</a>
+                <a href="/contactanos" class="hover:text-gray-200">Contáctanos</a>
+                <a href="/login" class="hover:text-gray-200">Login</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Login Form -->
+    <div class="h-screen flex items-center justify-center">
+        <div class="form-container p-8 rounded-lg shadow-xl max-w-md w-full">
+            <h2 class="text-3xl font-bold text-center text-blue-600 mb-6">Iniciar Sesión</h2>
+            
+            <form th:action="@{/login}" method="post">
+                <!-- Nombre Field -->
+                <div class="mb-4">
+                    <label for="nombre" class="block text-sm font-medium text-gray-700">Nombre</label>
+                    <input type="text" name="nombre" id="nombre" required 
+                        class="mt-2 block w-full px-4 py-2 rounded-lg border border-gray-300 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                </div>
+
+                <!-- Documento Field -->
+                <div class="mb-6">
+                    <label for="documento" class="block text-sm font-medium text-gray-700">Documento</label>
+                    <input type="password" name="documento" id="documento" required 
+                        class="mt-2 block w-full px-4 py-2 rounded-lg border border-gray-300 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                </div>
+
+                <!-- Submit Button -->
+                <div>
+                    <button type="submit" 
+                        class="w-full bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition duration-300">
+                        Ingresar
+                    </button>
+                </div>
+
+                <!-- Error Message -->
+                <div th:if="${error}" class="mt-4 text-center text-red-600 text-sm">
+                    <p th:text="${error}"></p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>
+
